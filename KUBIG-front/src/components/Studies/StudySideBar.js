@@ -1,18 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import RecentStudyList from "./RecentStudyList";
 
 export default function StudySideBar({
   category,
   semesters,
-  setSelectedSemester,
   categories,
   selectedCategory,
   setSelectedCategory,
+  handleSelectHandler,
 }) {
   const categoryStr = category.charAt(0).toUpperCase() + category.slice(1);
-  const handleSelectHandler = (e) => {
-    setSelectedSemester(e.target.value);
-  };
 
   return (
     <SideBarWrapper>
@@ -23,11 +21,11 @@ export default function StudySideBar({
             <option value="" disabled>
               년도
             </option>
-            {semesters.map((s, i) => (
+            {Array.isArray(semesters) ? semesters.map((s, i) => (
               <option value={s.id} key={i}>
                 {s.name}
               </option>
-            ))}
+            )): ''}
           </SelectContainer>
         </SessionContainer>
         <Divider>
@@ -53,6 +51,18 @@ export default function StudySideBar({
             </h3>
           ))}
         </ClassContainer>
+
+        <SessionContainer>
+          <h5>Recent Studies</h5>
+        </SessionContainer>
+        <Divider>
+          <RedLine />
+        </Divider>
+
+        <ClassContainer>
+          <RecentStudyList />
+        </ClassContainer>
+
       </SideBarContent>
     </SideBarWrapper>
   );
@@ -94,4 +104,5 @@ const SelectContainer = styled.select`
 `;
 const ClassContainer = styled.div`
   padding-top: 2rem;
+  padding-bottom: 2rem;
 `;

@@ -5,6 +5,8 @@ import TitleAndCategory from "../common/TitleAndCategory";
 import { useSearchParams } from "react-router-dom";
 import client from "../../lib/httpClient";
 
+import CKEditor5 from "./Ckeditory5";
+
 export default function StudyEdit() {
   const [htmlStr, setHtmlStr] = useState("");
   const [title, setTitle] = useState("");
@@ -17,6 +19,7 @@ export default function StudyEdit() {
 
   const [categorySearchParams] = useSearchParams();
   const session = categorySearchParams.get("category");
+
   const handleThumbnailChange = (event) => {
     if (event.target.files[0].type.startsWith("image")) {
       setThumbnailImg(event.target.files[0]);
@@ -25,6 +28,7 @@ export default function StudyEdit() {
   const fetchSemester = async () => {
     try {
       const res = await client.get("/studies/semesters");
+
       if (res) setSemesters(res.data);
     } catch (err) {
       alert(err);
@@ -46,6 +50,9 @@ export default function StudyEdit() {
       alert("올바르지 않은 접근입니다.");
     }
   };
+
+
+
   useEffect(() => {
     fetchCategory(selectedSemester);
   }, [selectedSemester]);
@@ -67,7 +74,10 @@ export default function StudyEdit() {
       />
 
       <EditorWrapper>
-        <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor>
+        {/* <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor> */}
+
+        <CKEditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+
       </EditorWrapper>
       <PdfInputWrapper style={{ height: "12rem" }}>
         {thumbnailImg ? thumbnailImg.name : "파일을 선택해주세요."}

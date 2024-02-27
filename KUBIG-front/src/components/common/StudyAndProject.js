@@ -57,7 +57,29 @@ export const ContentImageContainer = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 0.3125rem;
-    object-fit: cover;
+    object-fit: contain;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    padding: 0 10px;
+
+    & * {
+      color: white;
+      text-align: center;
+      white-space: nowrap;
+      width: 100%;
+      overflow:hidden;
+      text-overflow: ellipsis;
+    }
   }
 `;
 export const ItemWrapper = styled.div`
