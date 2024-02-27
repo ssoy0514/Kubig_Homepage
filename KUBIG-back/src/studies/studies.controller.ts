@@ -42,9 +42,10 @@ export class StudiesController {
   async getStudyList(
     @Query('category') category: number | null,
     @Query('page') page: number,
+    @Query('semester') semester: number,
     @Query('session') session: 'basic' | 'advance' | 'magazine',
   ) {
-    return await this.studiesService.getStudyList(category, page, session);
+    return await this.studiesService.getStudyList(category, page, semester, session);
   }
 
   @Get('/fixed')
@@ -59,6 +60,11 @@ export class StudiesController {
   @UseGuards(AuthGuard('jwt'))
   async deleteStudyById(@Param('id') id: number, @Req() req) {
     await this.studiesService.deleteStudy(id, req.user.id);
+  }
+
+  @Get('/recent_list')
+  async getRecentStudyList() {
+    return await this.studiesService.getRecentStudyList();
   }
 
   @Post('/update/:id')

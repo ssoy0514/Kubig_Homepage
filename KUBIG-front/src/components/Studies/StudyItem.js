@@ -6,13 +6,16 @@ import AuthContext from "../Auth/AuthContext";
 import client from "../../lib/httpClient";
 export default function StudyItem({ study }) {
   const handleDelete = async () => {
-    try {
-      await client.get("/studies/delete/" + study.id);
-      window.location.href =
-        "/studies?difficulty=" + study.category.sessionType;
-    } catch (err) {
-      alert(err.data.message);
-    }
+    if(window.confirm("삭제하시겠습니까?")){
+      try {
+        await client.get("/studies/delete/" + study.id);
+        alert("삭제되었습니다.");
+        window.location.href =
+          "/studies?difficulty=" + study.category.sessionType;
+      } catch (err) {
+        alert(err.data.message);
+      }
+    }else{}
   };
 
   const authContext = useContext(AuthContext);
@@ -56,7 +59,8 @@ export default function StudyItem({ study }) {
                     authContext.role === "admin"
                       ? "flex"
                       : "none",
-                  gap: 10,
+                  flex: '1',
+                  justifyContent: 'space-between'
                 }}
               >
                 <ButtonWrapper>

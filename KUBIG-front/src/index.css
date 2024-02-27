@@ -79,3 +79,23 @@ strong {
   box-sizing: border-box;
   position: relative;
 }
+
+.ck.ck-sticky-panel .ck-sticky-panel__content_sticky {
+  top: 82px !important;
+}
+
+.ck.ck-editor {
+  width: 100% !important;
+}
+
+.ck .ck-editor__main {
+  height: calc(80vh - 39.42px);
+}
+
+.ck-editor__editable {
+  height: 100%;
+}
+
+.ck-powered-by {
+  display: none;
+}
