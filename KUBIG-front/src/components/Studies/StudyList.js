@@ -12,7 +12,7 @@ import {
 import axios from "../../api/axios";
 import { EditButton, AddButton } from "../common/AddButton";
 
-export default function StudyList({ difficulty, selected }) {
+export default function StudyList({ difficulty, categories, selectedSemester, selected }) {
   const pageTitle =
     difficulty === "basic"
       ? "방학 세션 / BASIC"
@@ -29,44 +29,53 @@ export default function StudyList({ difficulty, selected }) {
     setCurrentPage(page);
   };
 
-  useEffect(() => {
-    fixedFetch(selected);
-  }, [selected, difficulty]);
+  // useEffect(() => {
+  //   fixedFetch(selected);
+  // }, [selected, difficulty]);
 
   useEffect(() => {
-    fetch(currentPage, selected);
-  }, [currentPage, selected, difficulty]);
-  const fetch = async (page, selected) => {
+    fetch(currentPage, selectedSemester, selected, categories);
+  }, [currentPage, selected, selectedSemester, categories, difficulty]);
+
+  const fetch = async (page, selectedSemester, selected, categories) => {
     try {
       const response = await axios.get(
         process.env.REACT_APP_KUBIG_PUBLIC_API_URL +
           "/studies/list" +
           `?session=${difficulty}&` +
           `${selected ? `category=${selected}&` : ""}` +
+          `${selectedSemester ? `semester=${selectedSemester}&` : ""}` +
           `page=${page}`
       );
+
+      if(categories.length === 0){
+        setSTUDY([]);
+        return;
+      }
+
       const data = response.data;
       setSTUDY(data.study);
     } catch (err) {
       alert("에러가 발생하였습니다.");
     }
   };
-  const fixedFetch = async (selected) => {
-    try {
-      const response = await axios.get(
-        process.env.REACT_APP_KUBIG_PUBLIC_API_URL +
-          "/studies/fixed" +
-          `?session=${difficulty}` +
-          `${selected ? `&category=${selected}` : ""}`
-      );
-      const data = response.data;
-      console.log(data);
-      setTotalPages(data.last_page);
-      setFixedStudy(data.study);
-    } catch (err) {
-      alert("에러가 발생하였습니다.");
-    }
-  };
+
+  // const fixedFetch = async (selected) => {
+  //   try {
+  //     const response = await axios.get(
+  //       process.env.REACT_APP_KUBIG_PUBLIC_API_URL +
+  //         "/studies/fixed" +
+  //         `?session=${difficulty}` +
+  //         `${selected ? `&category=${selected}` : ""}`
+  //     );
+  //     const data = response.data;
+  //     console.log(data);
+  //     setTotalPages(data.last_page);
+  //     setFixedStudy(data.study);
+  //   } catch (err) {
+  //     alert("에러가 발생하였습니다.");
+  //   }
+  // };
   const parser = new DOMParser();
 
   return (
@@ -78,7 +87,7 @@ export default function StudyList({ difficulty, selected }) {
             <Link to={`/studies/new?category=${difficulty}`}>글쓰기</Link>
           </EditButton>
         </HeaderContainer>
-        <FixedStudyContainer>
+        {/* <FixedStudyContainer>
           {FixedStudy.map((study) => (
             <Link to={`/studies/${study.id}`}>
               <FixedStudyContent key={study.id}>
@@ -88,7 +97,7 @@ export default function StudyList({ difficulty, selected }) {
               </FixedStudyContent>
             </Link>
           ))}
-        </FixedStudyContainer>
+        </FixedStudyContainer> */}
         <StudyContentContainer>
           {STUDY.map((study, i) => (
             <Link key={i} to={`/studies/${study.id}`}>
@@ -105,7 +114,8 @@ export default function StudyList({ difficulty, selected }) {
                   </h4>
                   <div
                     style={{
-                      width: 846,
+                      width: '100%',
+                      maxWidth: 846, 
                       height: 125,
                       overflow: "hidden",
                       whiteSpace: "normal",
@@ -149,6 +159,7 @@ const StudyContent = styled.div`
 `;
 const StudyImageContainer = styled.div`
   width: 30%;
+  min-width: 260px;
 
   position: relative;
   &::after {
@@ -162,7 +173,7 @@ const StudyImageContainer = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 0.3125rem;
-    object-fit: cover;
+    object-fit: contain;
   }
 `;
 const StudyText = styled.div`

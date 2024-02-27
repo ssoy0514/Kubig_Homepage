@@ -41,6 +41,7 @@ export default function TitleAndCategory({
         categoryId: selectedCategory,
         content: htmlStr,
         thumbnailUrl: thumbnailUrl,
+        semester: semesters,
       });
       window.location.href = "/studies?difficulty=" + session;
     } catch (err) {

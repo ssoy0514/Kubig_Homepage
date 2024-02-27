@@ -71,6 +71,7 @@ export class StudiesService {
   async getStudyList(
     category: number | null,
     page = 1,
+    semester: number,
     session: 'basic' | 'advance' | 'magazine',
   ) {
     if (category) {
@@ -110,6 +111,20 @@ export class StudiesService {
         last_page: Math.ceil(total / PAGE_SIZE),
       };
     }
+  }
+
+  async getRecentStudyList() {
+    const [studyList, total] = await this.studyRepository.findAndCount({
+      order: {
+        createdAt: 'ASC',
+      },
+      take: 5,
+    });
+
+    return {
+      study: studyList,
+      total,
+    };
   }
 
   async getFixedStudies(

@@ -31,7 +31,7 @@ function StudiesEdit() {
   const fetch = async () => {
     try {
       const res = await client.get("/studies/info/" + id);
-      console.log(res);
+
       if (res) {
         setHtmlStr(res.data.content);
         setTitle(res.data.title);
