@@ -7,8 +7,6 @@ import client from "../../lib/httpClient";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-// import { Image, ImageResizeButtons, ImageResizeEditing, ImageToolbar } from '@ckeditor/ckeditor5-image';
-
 
 export default function CKEditor5({
   htmlStr,
