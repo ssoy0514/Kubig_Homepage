@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { useState } from "react";
 import { EditorWrapper, NewWrapper } from "../../Studies/StudyEdit";
 import QuillEditor from "../../Studies/QuillEditor";
-import Ckeditory5 from "../../Studies/Ckeditory5";
+import Ckeditory5 from "../../Studies/Ckeditor5";
 import client from "../../../lib/httpClient";
 import NoticeTagInput from "./NoticeTagInput";
 

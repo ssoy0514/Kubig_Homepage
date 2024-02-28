@@ -5,7 +5,7 @@ import TitleAndCategory from "../common/TitleAndCategory";
 import { useSearchParams } from "react-router-dom";
 import client from "../../lib/httpClient";
 
-import CKEditor5 from "./Ckeditory5";
+import CKEditor5 from "./Ckeditor5";
 
 export default function StudyEdit() {
   const [htmlStr, setHtmlStr] = useState("");
