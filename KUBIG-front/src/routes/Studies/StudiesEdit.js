@@ -7,7 +7,7 @@ import { styled } from "styled-components";
 import QuillEditor from "../../components/Studies/QuillEditor";
 import axios from "../../api/axios";
 
-import Ckeditor5 from "../../components/Studies/Ckeditor5";
+import {Ckeditor5} from "../../components/Studies/Ckeditor5";
 
 function StudiesEdit() {
   const url = window.location.href;

@@ -6,41 +6,41 @@ import client from "../../lib/httpClient";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-export default function CKEditor5({htmlStr, setHtmlStr}) {
+export function Ckeditor5({htmlStr, setHtmlStr}) {
   const [flag, setFlag] = useState(false);
   window.katex = katex;
 
   const customUploadAdapter = (loader) => {
     return {
-            upload(){
-                return new Promise ((resolve, reject) => {
-                    const formData = new FormData();
+        upload(){
+          return new Promise ((resolve, reject) => {
+              const formData = new FormData();
 
-                    loader.file.then( (file) => {
-                        formData.append("file", file);
+              loader.file.then( (file) => {
+                  formData.append("file", file);
 
-                        client.post(
-                            process.env.REACT_APP_KUBIG_PUBLIC_API_URL + "/s3",
-                            formData
-                          ).then((res) => {
-                            if(!flag){
-                                setFlag(true);
-                            }
-                            resolve({
-                                default: res.data
-                            });
-                        })
-                        .catch((err)=>reject(err));
+                  client.post(
+                      process.env.REACT_APP_KUBIG_PUBLIC_API_URL + "/s3",
+                      formData
+                      ).then((res) => {
+                      if(!flag){
+                          setFlag(true);
+                      }
+                      resolve({
+                          default: res.data
+                      });
+                  })
+                  .catch((err)=>reject(err));
 
-                    })})
-            }
+              })})
         }
+      }
     }
 
     function uploadPlugin (editor) { 
-    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+      editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
         return customUploadAdapter(loader);
-        }
+      }
     }   
 
   return (
