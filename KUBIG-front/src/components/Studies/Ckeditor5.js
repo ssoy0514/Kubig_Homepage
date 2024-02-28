@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import client from "../../lib/httpClient";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from '@ckeditor/ckeditor5-custom';
 
 export function Ckeditor5({htmlStr, setHtmlStr}) {
   const [flag, setFlag] = useState(false);
@@ -42,6 +43,10 @@ export function Ckeditor5({htmlStr, setHtmlStr}) {
         return customUploadAdapter(loader);
       }
     }   
+
+    useEffect(() => {
+      console.log(ClassicEditor)
+    }, [])
 
   return (
     <CKEditor

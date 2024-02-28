@@ -75,9 +75,7 @@ export default function StudyEdit() {
 
       <EditorWrapper>
         {/* <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor> */}
-
         <Ckeditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
-
       </EditorWrapper>
       <PdfInputWrapper style={{ height: "12rem" }}>
         {thumbnailImg ? thumbnailImg.name : "파일을 선택해주세요."}
