@@ -101,6 +101,10 @@ export default function NoticeInput({
         deadline === "")) ||
     (mode !== 2 && (title === "" || htmlStr === null || htmlStr === ""));
 
+    const changeHtmlStr = (e) => {
+      setHtmlStr(e);
+    }
+
   return (
     <NewWrapper>
       <InputContainer>
@@ -150,7 +154,7 @@ export default function NoticeInput({
           thumbnailUrl={thumbnailUrl}
           setThumbnailUrl={setThumbnailUrl}
         ></QuillEditor> */}
-        <Ckeditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+        <Ckeditor5 htmlStr={htmlStr} changeHtmlStr={changeHtmlStr} />
       </EditorWrapper>
     </NewWrapper>
   );
