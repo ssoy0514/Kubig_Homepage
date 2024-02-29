@@ -64,7 +64,7 @@ const Step1 = ({
         />
       </FormBox>
 
-      <MenuBar style={{ "margin-top": "2rem" }}>
+      <MenuBar style={{ "marginTop": "2rem" }}>
         <div className="menu">
           <NavLink to="/auth/login" className="login">
             <p>로그인으로 돌아가기</p>

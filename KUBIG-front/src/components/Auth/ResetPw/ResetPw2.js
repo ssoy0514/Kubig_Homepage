@@ -108,7 +108,7 @@ const Step2 = ({
         </FormBox>
         <Button
           type="submit"
-          style={{ "margin-top": "-3rem" }}
+          style={{ "marginTop": "-3rem" }}
           disabled={!validMatch || !matchPwd || !validMatch || inputCode.length !== 6}
           c={!validMatch || !matchPwd || !validMatch || inputCode.length !== 6 ? "#E5E6E9" : ""}
           fc={!validMatch || !matchPwd || !validMatch || inputCode.length !== 6 ? "#979797" : ""}

@@ -29,14 +29,14 @@ export default function PdfInput({
           : existingThumbnail
           ? existingThumbnail
           : "파일을 선택해주세요."}
-        <Label for="thumbnail">
+        <Label htmlFor="thumbnail">
           썸네일 이미지 업로드
           <InputFile id="thumbnail" type="file" onChange={handleThumbnailChange} accept="image/*" />
         </Label>
       </PdfInputWrapper>
       <PdfInputWrapper>
         {selectedFile ? selectedFile.name : existingFile ? existingFile : "파일을 선택해주세요."}
-        <Label for="input-file">
+        <Label htmlFor="input-file">
           pdf 파일 업로드
           <InputFile id="input-file" type="file" onChange={handleFileChange} accept=".pdf" />
         </Label>
