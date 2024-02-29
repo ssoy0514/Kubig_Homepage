@@ -46,7 +46,7 @@ export function Ckeditor5({htmlStr, changeHtmlStr}) {
 
   return (
     <CKEditor
-        editor={ ClassicEditor }
+        editor={ ClassicEditor.Editor }
         config={{
           extraPlugins: [uploadPlugin]
         }}
