@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { useState } from "react";
 import { EditorWrapper, NewWrapper } from "../../Studies/StudyEdit";
 import QuillEditor from "../../Studies/QuillEditor";
-import Ckeditory5 from "../../Studies/Ckeditory5";
+import {Ckeditor5} from "../../Studies/Ckeditor5";
 import client from "../../../lib/httpClient";
 import NoticeTagInput from "./NoticeTagInput";
 
@@ -150,7 +150,7 @@ export default function NoticeInput({
           thumbnailUrl={thumbnailUrl}
           setThumbnailUrl={setThumbnailUrl}
         ></QuillEditor> */}
-        <Ckeditory5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+        <Ckeditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
       </EditorWrapper>
     </NewWrapper>
   );
