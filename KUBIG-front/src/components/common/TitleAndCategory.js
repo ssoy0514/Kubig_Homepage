@@ -39,7 +39,7 @@ export default function TitleAndCategory({
       const res = await client.post("/studies", {
         title: title,
         categoryId: selectedCategory,
-        content: htmlStr,
+        content: document.querySelector('.ck-content').innerHTML,
         thumbnailUrl: thumbnailUrl,
         semester: semesters,
       });

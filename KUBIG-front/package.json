@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
     "katex": "^0.16.8",
+    "lodash": "^4.17.21",
     "quill-image-resize": "^3.0.9",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
