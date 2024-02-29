@@ -92,14 +92,14 @@ function StudiesEdit() {
         const thumbnailUrl = thumbnailResponse.data;
         await client.post("/studies/update/" + id, {
           title: title,
-          content: htmlStr,
+          content: document.querySelector('.ck-content').innerHTML,
           categoryId: selectedCategory,
           thumbnailUrl: thumbnailUrl,
         });
       } else {
         await client.post("/studies/update/" + id, {
           title: title,
-          content: htmlStr,
+          content: document.querySelector('.ck-content').innerHTML,
           categoryId: selectedCategory,
           thumbnailUrl: existingThumbnail,
         });
@@ -110,6 +110,10 @@ function StudiesEdit() {
       alert(err);
     }
   };
+
+  const changeHtmlStr = (e) => {
+    setHtmlStr(e);
+  }
 
   return (
     <NewWrapper>
@@ -142,7 +146,7 @@ function StudiesEdit() {
       </PdfInputWrapper>
       <EditorWrapper>
         {/* <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor> */}
-        <Ckeditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+        <Ckeditor5 htmlStr={htmlStr} changeHtmlStr={changeHtmlStr} />
       </EditorWrapper>
     </NewWrapper>
   );

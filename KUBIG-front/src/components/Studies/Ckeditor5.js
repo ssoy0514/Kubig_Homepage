@@ -7,7 +7,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import ClassicEditor from '@ckeditor/ckeditor5-custom';
 
-export function Ckeditor5({htmlStr, setHtmlStr}) {
+export function Ckeditor5({htmlStr, changeHtmlStr}) {
   const [flag, setFlag] = useState(false);
   window.katex = katex;
 
@@ -44,13 +44,9 @@ export function Ckeditor5({htmlStr, setHtmlStr}) {
       }
     }   
 
-    useEffect(() => {
-      console.log(ClassicEditor)
-    }, [])
-
   return (
     <CKEditor
-        editor={ ClassicEditor }
+        editor={ ClassicEditor.Editor }
         config={{
           extraPlugins: [uploadPlugin]
         }}
@@ -60,7 +56,7 @@ export function Ckeditor5({htmlStr, setHtmlStr}) {
             // console.log( 'Editor is ready to use!', editor );
         } }
         onChange={ ( event, editor ) => {
-            setHtmlStr( editor.getData() );
+          changeHtmlStr( editor.getData() );
         } }
         onBlur={ ( event, editor ) => {
             // console.log( 'Blur.', editor );
