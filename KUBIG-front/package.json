@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ckeditor/ckeditor5-basic-styles": "^41.1.0",
-    "@ckeditor/ckeditor5-editor-classic": "^41.1.0",
-    "@ckeditor/ckeditor5-essentials": "^41.1.0",
-    "@ckeditor/ckeditor5-paragraph": "^41.1.0",
-    "@ckeditor/ckeditor5-react": "^6.2.0",
-    "@ckeditor/ckeditor5-theme-lark": "^41.1.0",
     "@fullcalendar/core": "^6.1.8",
     "@fullcalendar/daygrid": "^6.1.8",
     "@fullcalendar/google-calendar": "^6.1.8",
