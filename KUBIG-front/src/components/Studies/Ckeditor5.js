@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import katex from "katex";
-import "katex/dist/katex.min.css";
 import client from "../../lib/httpClient";
 
+import Editor from 'ckeditor5-custom-build/build/ckeditor'; 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ClassicEditor from '@ckeditor/ckeditor5-custom';
 
 export function Ckeditor5({htmlStr, changeHtmlStr}) {
   const [flag, setFlag] = useState(false);
-  window.katex = katex;
 
   const customUploadAdapter = (loader) => {
     return {
@@ -44,12 +40,18 @@ export function Ckeditor5({htmlStr, changeHtmlStr}) {
       }
     }   
 
+    useEffect(() => {
+      // console.log(Editor)
+    })
+
+    const editorConfiguration = {
+      extraPlugins: [uploadPlugin],
+    };
+
   return (
     <CKEditor
-        editor={ ClassicEditor.Editor }
-        config={{
-          extraPlugins: [uploadPlugin]
-        }}
+        editor={Editor}
+        config={editorConfiguration}
         data={htmlStr}
         onReady={ editor => {
             // You can store the "editor" and use when it is needed.
