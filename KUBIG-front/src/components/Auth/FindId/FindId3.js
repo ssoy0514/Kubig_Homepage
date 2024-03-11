@@ -42,7 +42,7 @@ const Step3 = ({ success, findResult, setStep }) => (
       </>
     ) : (
       <>
-        <ButtonWrapper style={{ "margin-top": "4rem" }}>
+        <ButtonWrapper style={{ "marginTop": "4rem" }}>
 
             <Button fc={"#fff"} c={"#BDBDBD"} w={6} h={2.5} br={0.675} fs={1}onClick={()=>{setStep(1)}}>
               아이디 찾기

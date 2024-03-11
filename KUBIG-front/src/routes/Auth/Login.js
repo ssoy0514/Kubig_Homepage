@@ -122,7 +122,7 @@ const Login = () => {
               <FormStyled
                 onSubmit={handleSubmit}
                 style={{
-                  "margin-top": "-3rem",
+                  "marginTop": "-3rem",
                 }}
               >
                 <FormBox
