@@ -6,9 +6,6 @@ import TitleAndCategory from "../../components/common/TitleAndCategory";
 import { styled } from "styled-components";
 import QuillEditor from "../../components/Studies/QuillEditor";
 import axios from "../../api/axios";
-
-import {Ckeditor5} from "../../components/Studies/Ckeditor5";
-
 function StudiesEdit() {
   const url = window.location.href;
 
@@ -141,8 +138,7 @@ function StudiesEdit() {
         </Label>
       </PdfInputWrapper>
       <EditorWrapper>
-        {/* <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor> */}
-        <Ckeditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+        <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor>
       </EditorWrapper>
     </NewWrapper>
   );

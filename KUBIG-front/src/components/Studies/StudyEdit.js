@@ -5,7 +5,7 @@ import TitleAndCategory from "../common/TitleAndCategory";
 import { useSearchParams } from "react-router-dom";
 import client from "../../lib/httpClient";
 
-import {Ckeditor5} from "./Ckeditor5";
+import CKEditor5 from "./Ckeditory5";
 
 export default function StudyEdit() {
   const [htmlStr, setHtmlStr] = useState("");
@@ -75,7 +75,9 @@ export default function StudyEdit() {
 
       <EditorWrapper>
         {/* <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor> */}
-        <Ckeditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+
+        <CKEditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
+
       </EditorWrapper>
       <PdfInputWrapper style={{ height: "12rem" }}>
         {thumbnailImg ? thumbnailImg.name : "파일을 선택해주세요."}
