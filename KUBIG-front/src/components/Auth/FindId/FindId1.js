@@ -35,7 +35,7 @@ const Step1 = ({ email, validEmail, userRef, handleSubmitStep1, handleEmailChang
         <img src={CheckCircle} alt="check" className={validEmail ? "valid" : "hide"} />
       </FormBox>
 
-      <MenuBar style={{ "marginTop": "2rem" }}>
+      <MenuBar style={{ "margin-top": "2rem" }}>
         <div className="menu">
           <NavLink to="/auth/login" className="login">
             <p>로그인으로 돌아가기</p>

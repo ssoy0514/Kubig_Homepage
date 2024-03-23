@@ -108,7 +108,7 @@ export default function StudyEdit() {
       </EditorWrapper>
       <PdfInputWrapper style={{ height: "12rem" }}>
         {thumbnailImg ? thumbnailImg.name : "파일을 선택해주세요."}
-        <Label htmlFor="thumbnail">
+        <Label for="thumbnail">
           썸네일 이미지 업로드
           <InputFile
             id="thumbnail"

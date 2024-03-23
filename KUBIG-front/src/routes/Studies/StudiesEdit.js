@@ -134,7 +134,7 @@ function StudiesEdit() {
       />
       <PdfInputWrapper style={{ height: "15vh" }}>
         {thumbnailImg ? thumbnailImg.name : existingThumbnail}
-        <Label htmlFor="thumbnail">
+        <Label for="thumbnail">
           썸네일 이미지 업로드
           <InputFile
             id="thumbnail"

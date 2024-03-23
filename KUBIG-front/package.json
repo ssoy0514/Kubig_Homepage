@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^41.2.0",
+    "@ckeditor/ckeditor5-build-classic": "^41.1.0",
     "@ckeditor/ckeditor5-react": "^6.2.0",
     "@fullcalendar/core": "^6.1.8",
     "@fullcalendar/daygrid": "^6.1.8",
@@ -15,7 +15,6 @@
     "@uiw/react-md-editor": "^3.23.3",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
-    "ckeditor5-custom-build": "file:ckeditor5",
     "katex": "^0.16.8",
     "lodash": "^4.17.21",
     "quill-image-resize": "^3.0.9",
