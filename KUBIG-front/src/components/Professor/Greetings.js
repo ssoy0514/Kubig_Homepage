@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import Logo from "../../image/KubigCircleLogo.png";
+import president from "../../image/19th_president.png";
 
 export default function Greetings() {
   return (
@@ -9,7 +9,7 @@ export default function Greetings() {
         <Wrapper className="inner">
           <ProfileContainer>
             <ImageContainer>
-              <img src={Logo} alt="logo" />
+              <img src={president} alt="logo" />
             </ImageContainer>
           </ProfileContainer>
 
@@ -22,23 +22,18 @@ export default function Greetings() {
               </p>
               <br />
               <p>
-                고려대학교 데이터 사이언스 학회 <b>KUBIG</b>은 데이터 사이언스에
-                관심이 있는 학생들끼리 <br />
-                같이 공부하며 학습 네트워크를 형성하는 교내 학회입니다.
-              </p>
+                <b>KUBIG</b>은 데이터를 통해 세상을 바라보며, Artificial Intelligence를 통해 세계를 바꾸려는 변화의 최전선에 있는 사람들의 모임입니다.</p>
             </TitleBox>
 
             <TextContainer>
               <Line />
               <TextBox>
-                <p>
-                  2015년 고려대학교 빅데이터 연구회라는 이름으로 통계학과 출범한
-                  KUBIG은, 그간 학회원들의 열정과 역량에 힘입어 현재 명실상부
-                  고려대학교를 대표하는 데이터 사이언스 학회가 되었습니다.
+                <p> 안녕하세요, KUBIG 19대 학회장 <b>김지윤, 김희준, 문성빈</b>입니다.
+2024년 현재, 우리는 빠른 혁신의 시대에 살고 있습니다. 세계는 방대한 데이터의 흐름 속에서 움직이며, 이러한 데이터로부터 얻어진 인사이트는 우리가 의식하지 못하는 사이에 더 나은 삶을 추구하는 데 기여하고 있습니다.
                 </p>
                 <p>
-                  앞으로 KUBIG과 함께할 시간이 여러분에게 있어 많은 것을
-                  얻어가는 기회와 경험이 되길 바랍니다.
+                학회의 성장에 직접적으로 참여하시는 지도교수님과 더불어 다양한 Field의 Alumni들의 도움을 받을 뿐만 아니라, 체계적인 Two-Stage Curriculum으로 발전을 도모하고 있으며, 이를 연간 20여개 이상의 수상 경력으로 증명하고 있습니다.
+KUBIG 학회장단은 KUBIG의 일원임을 자부심으로 느끼고 있습니다. 모든 학회원 분들과 이같은 자부심을 공유하려 치열하게 부딪히고, 지혜롭게 고민하며, 품격 있게 나아가겠습니다.
                 </p>
               </TextBox>
             </TextContainer>
@@ -91,7 +86,6 @@ const ContentContainer = styled.div`
 const TitleBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
 
   p {
     color: #000;
@@ -125,7 +119,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   //gap: 5rem;
-  padding-top: 4.2rem;
+  padding-top: 3rem;
 `;
 
 const Line = styled.div`

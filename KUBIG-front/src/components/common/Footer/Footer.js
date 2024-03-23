@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import SNSBar from "./SNSBar";
-import Logo from "../../../image/FooterLogo.svg";
+import Logo from "../../../image/KUBIG_logo-04.png";
 
 // Footer
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
                   <p>
                     고려대학교
                     <br />
-                    데이터사이언스 학회
+                    데이터사이언스 & AI 학회
                   </p>
                 </LogotxtContainer>
               </Textbox>
@@ -32,7 +32,7 @@ export default function Footer() {
                 <br />
                 Professor | 임성빈 교수님 (고려대 통계학과)
                 <br />
-                19th President | 김지윤 | 010-3142-3884
+                19th President | 김지윤 | 010-3412-3884
                 <br />
                 19th President | 김희준 | 010-3099-7565
                 <br />

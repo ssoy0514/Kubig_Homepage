@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 import { MenuData } from "./MenuData";
 
-import Logo from "../../../image/logo.svg";
+import Logo from "../../../image/KUBIG_logo-04.png";
 import MenuItems from "./MenuItems";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../Auth/AuthContext";

@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Logo from "../../image/KubigCircleLogo.png";
+import Logo from "../../image/KUBIG_logo-01.png";
 
 export default function KubigInfo() {
   return (
@@ -8,24 +8,21 @@ export default function KubigInfo() {
         <h2>
           데이터로 세상을 꿰뚫어보는, <strong>KUBIG</strong> 입니다.
         </h2>
-        <h2>고려대학교 유일의 데이터 사이언스 학회</h2>
+        <h2>고려대학교 데이터 사이언스 & AI 학회</h2>
       </MainTextContainer>
       <Wrapper>
         <ContentWrapper>
           <TextContainer>
             <h1>Who We Are</h1>
             <p>
-              <strong> 고려대학교 데이터 사이언스 학회 KUBIG</strong>은 데이터
+              <strong> 고려대학교 데이터 사이언스 & AI 학회 KUBIG</strong>은 데이터
               사이언스에 관심이 있는 학생들끼리 
               같이 공부하며 학습 네트워크를 형성하는 교내 학회입니다. <br />
               <br />
               2015년 <strong>고려대학교 빅데이터 연구회</strong>라는 이름으로
               통계학과에서 출범한 <strong>KUBIG</strong>은 그간 학회원들의
-              열정과 역량에 힘입어 이제 고려대학교를 대표하는 데이터 사이언스
-              학회가 되었습니다. <br />
-              이에 2021년, 학회명을{" "}
-              <strong>고려대학교 데이터 사이언스 학회</strong>로 변경하고 더
-              높은 곳으로 비상할 준비를 마쳤습니다.
+              열정과 역량에 힘입어 이제 고려대학교를 대표하는 데이터 사이언스 학회가 되었습니다. <br />
+              2023년에는 <strong>임성빈 지도교수님 선임</strong>과 함께 <strong>고려대학교 데이터 사이언스 & AI 학회</strong>로 학회명{" "}을 변경하고 더 높은 곳으로 비상할 준비를 마쳤습니다.
               <br />
               <br /> <strong>KUBIG</strong>은 학과, 학부/대학원 등 소속에
               구애받지 않고{" "}
@@ -123,7 +120,7 @@ display: inline-block;
     float: right;
     width: 100%;
     box-shadow: 0 4px 16px rgb(0,0,0,0.2);
-    border-radius: 50%;
+    // border-radius: 50%;
   }
   //flex-shrink: 0;
   //padding-left: 2rem;

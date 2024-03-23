@@ -8,8 +8,7 @@ export default function AboutUs() {
         <h1>About Us</h1>
         <br />
         <h3>
-          <strong>KUBIG</strong> 은 세상을 꿰뚫어볼 수 있는 미래 데이터
-          사이언티스트들의 학술적 교류의 장입니다
+        <b>KUBIG</b>은 데이터를 통해 세상을 바라보며, Artificial Intelligence를 통해 세계를 바꾸려는 변화의 최전선에 있는 사람들의 모임입니다.
         </h3>
         <br />
       </TextContainer>

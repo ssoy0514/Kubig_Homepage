@@ -107,6 +107,12 @@ export default function History() {
               <h3>
                 <strong>임성빈 지도교수님 선임</strong>
               </h3>
+              <h3>
+                <strong>고려대학교 데이터 사이언스 & AI 학회</strong>
+              </h3>
+              <h3>
+                <strong>KUBIG으로</strong> 명칭 변경
+              </h3>
             </TextContainer>
           </DetailContainer>
         </HistoryContainer>
