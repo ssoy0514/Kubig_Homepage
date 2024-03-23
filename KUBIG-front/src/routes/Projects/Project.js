@@ -50,7 +50,7 @@ export default function Project() {
         setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
       />
-      <ProjectList category={session} categories={categories} selectedSemester={selectedSemester} selectedCategory={selectedCategory} />
+      <ProjectList category={session} selectedCategory={selectedCategory} />
     </div>
   );
 }

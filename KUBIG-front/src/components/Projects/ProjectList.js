@@ -12,7 +12,7 @@ import {
 import { EditButton, AddButton } from "../common/AddButton";
 import axios from "../../api/axios";
 
-export default function ProjectList({ category, categories, selectedSemester, selectedCategory }) {
+export default function ProjectList({ category, selectedCategory }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [projects, setProjects] = useState([]);
@@ -33,8 +33,8 @@ export default function ProjectList({ category, categories, selectedSemester, se
     console.log(projects);
   };
   useEffect(() => {
-    fetchProjects(currentPage, selectedCategory, categories, selectedSemester);
-  }, [selectedCategory, currentPage,  categories, selectedSemester, category]);
+    fetchProjects(currentPage, selectedCategory);
+  }, [selectedCategory, currentPage, category]);
 
   return (
     <ProjectWrapper>
@@ -50,11 +50,9 @@ export default function ProjectList({ category, categories, selectedSemester, se
             <ProjectContent key={study.id}>
               <ContentImageContainer>
                 <img src={study.thumbnailUrl} alt="fixed" />
-                <div>
-                  <h3>{study.title}</h3>
-                  <h5>{study.createdAt.substring(0, 10)}</h5>
-                </div>
               </ContentImageContainer>
+              <h3>{study.title}</h3>
+              <h5>{study.createdAt.substring(0, 10)}</h5>
             </ProjectContent>
           </Link>
         ))}

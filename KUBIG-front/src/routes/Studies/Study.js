@@ -13,7 +13,6 @@ export default function Study() {
   const [categories, setCategories] = useState([]);
   const [selectedSemester, setSelectedSemester] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
-
   const fetchSemester = async () => {
     try {
       const res = await client.get("/studies/semesters");
@@ -22,14 +21,12 @@ export default function Study() {
         setSelectedSemester(res.data[0].id);
       }
     } catch (err) {
-      console.log(err);
+      alert(err);
     }
   };
-
   useEffect(() => {
     fetchSemester();
   }, []);
-
   const fetchCategory = async (semester, session) => {
     try {
       if (semester) {
@@ -41,11 +38,6 @@ export default function Study() {
       alert("올바르지 않은 접근입니다.");
     }
   };
-
-  const handleSelectHandler = (e) => {
-    setSelectedSemester(e.target.value);
-  }
-
   useEffect(() => {
     fetchCategory(selectedSemester, session);
   }, [selectedSemester, session]);
@@ -58,9 +50,8 @@ export default function Study() {
         categories={categories}
         setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
-        handleSelectHandler={handleSelectHandler}
       />
-      <StudyList difficulty={session} categories={categories} selectedSemester={selectedSemester} selected={selectedCategory} />
+      <StudyList difficulty={session} selected={selectedCategory} />
     </div>
   );
 }

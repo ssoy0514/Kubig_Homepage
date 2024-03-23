@@ -5,13 +5,11 @@ import axios from "../../api/axios";
 export default function ProjectDetail() {
   const [data, setData] = useState(null);
   const id = window.location.href.substring(window.location.href.lastIndexOf("/") + 1);
-
   const fetch = async () => {
     try {
       const res = await axios.get(
         process.env.REACT_APP_KUBIG_PUBLIC_API_URL + "/project/info/" + id
       );
-
       if (res) setData(res.data);
       if (!res || !res.data) throw new Error();
     } catch (err) {
@@ -19,7 +17,6 @@ export default function ProjectDetail() {
       window.localStorage.href = "/projects?category=reference";
     }
   };
-
   useEffect(() => {
     fetch();
   }, []);
