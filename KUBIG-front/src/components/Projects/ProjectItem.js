@@ -41,9 +41,6 @@ export default function ProjectItem({ project }) {
                   ? "flex"
                   : "none",
               gap: 10,
-              flex: 1,
-              justifyContent: 'space-between',
-              paddingRight: '10px'
             }}
           >
             <ButtonWrapper>

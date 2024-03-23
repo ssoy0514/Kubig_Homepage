@@ -30,6 +30,7 @@ export default function ProjectList({ category, categories, selectedSemester, se
     const { data } = res;
     setTotalPages(data.last_page);
     setProjects(data.projectList);
+    console.log(projects);
   };
   useEffect(() => {
     fetchProjects(currentPage, selectedCategory, categories, selectedSemester);

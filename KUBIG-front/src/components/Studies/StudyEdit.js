@@ -7,8 +7,6 @@ import client from "../../lib/httpClient";
 
 import {Ckeditor5} from "./Ckeditor5";
 
-import {debounce} from 'lodash';
-
 export default function StudyEdit() {
   const [htmlStr, setHtmlStr] = useState("");
   const [title, setTitle] = useState("");
@@ -53,38 +51,11 @@ export default function StudyEdit() {
     }
   };
 
-  const changeHtmlStr = (e) => {
-    const data = document.querySelector('.ck-content').innerHTML;
-    // console.log(data);
-    // console.log(e);
-    // setHtmlStr(e);
-    
-    handleDebounce(e);
-  }
 
-  const handleDebounce = debounce((e) => {
-    localStorage.setItem('post', document.querySelector('.ck-content').innerHTML);
-  }, 1000)
-
-  const checkSavedPost = () => {
-    const data = localStorage.getItem('post');
-    if(data === null){}else {
-      if(window.confirm('임시저장된 게시물이 있습니다. 사용하시겠습니까?')){
-        setHtmlStr(data);
-      }else{
-        localStorage.clear('post');
-      }
-    }
-  }
 
   useEffect(() => {
     fetchCategory(selectedSemester);
   }, [selectedSemester]);
-
-  useEffect(() => {
-    checkSavedPost();
-  }, [])
-
   return (
     <NewWrapper>
       <TitleAndCategory
@@ -104,7 +75,7 @@ export default function StudyEdit() {
 
       <EditorWrapper>
         {/* <QuillEditor htmlStr={htmlStr} setHtmlStr={setHtmlStr}></QuillEditor> */}
-        <Ckeditor5 htmlStr={htmlStr} changeHtmlStr={changeHtmlStr} />
+        <Ckeditor5 htmlStr={htmlStr} setHtmlStr={setHtmlStr} />
       </EditorWrapper>
       <PdfInputWrapper style={{ height: "12rem" }}>
         {thumbnailImg ? thumbnailImg.name : "파일을 선택해주세요."}
